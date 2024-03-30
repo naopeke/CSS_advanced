@@ -1,0 +1,22 @@
+.parent {
+    color: blue;
+
+    //子要素のみ紫 複数のほうが詳細度が上がるので、second-childをhtmlに追加しても、こちらが優先される。そのため、＆を使用しネストに入れる
+    & > .element {
+        color: purple;
+
+        //スペースなし
+        &.second-child {
+            color: black;
+        }
+    }
+}
+
+.element {
+    color: red;
+}
+
+// htmlにchild classを追加して
+// .child {
+//     color: purple;
+// }

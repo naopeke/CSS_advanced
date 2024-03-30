@@ -1,0 +1,21 @@
+#container {
+    text-align: center;
+}
+
+.btn {
+    background-color: white;
+    color:black;
+    border: 2px solid black;
+    padding: 10px 40px;
+    margin: 50px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease 3s; 
+    /*color 300ms ease 3s ホバーして３秒後に色が0.3秒かけて変化する*/
+    /*transition: color 0.3s ease 1s, background-color 0.3s ease 2s と複数も可能*/
+}

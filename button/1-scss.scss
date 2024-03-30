@@ -1,0 +1,35 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+    text-align: center;
+}
+
+.btn {
+    background-color: $cWhite;
+    color:$cBlack;
+    border: 2px solid $cBlack;
+    padding: 10px 40px;
+    margin: 50px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    /*半角スペース空けたい場合は「&」は省略可能。hoverのように空けたくない場合は省略不可*/
+    &:hover {
+        background-color: $cBlack;
+        color: $cWhite;
+    }
+    
+    /*.btn-cube*/
+    &-cube {
+        background-color: $cBlack;
+
+        /*.btn-cube .inner*/
+        & .inner{
+            background-color: $cBlack;
+        }
+    }
+}
+
+/*CSSファイルは触らない！！*/
