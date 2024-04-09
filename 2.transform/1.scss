@@ -1,0 +1,24 @@
+.rect {
+    width: 100px;
+    height: 100px;
+    /*width, height設定で、margin:0 autoにすると中央揃えになる*/
+    margin: 0 auto;
+    background-color:  orangered;
+    /*translateX：横軸のみ translateY：縦軸のみ*/
+    /*transform: translate(50%);*/
+
+    /*transform-originで始点を決める top left, -20px -20pxも可能*/
+    /*transform: rotate(30deg);*/
+    /*transform-origin: center center;*/
+
+    /*skew X Yでの指定も可*/
+    /*transform: skew(-30deg, -30deg);*/
+    /*transform-origin: center center;*/
+
+    /*scale X Yでの指定も可*/
+    /*transform: scale(2, 1.1);*/
+    /*transform-origin: center center;*/
+
+    transform: translateX(50px) scaleY(2);
+    transform-origin: center center;
+}

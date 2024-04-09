@@ -1,0 +1,64 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+    text-align: center;
+}
+
+.btn {
+    background-color: $cWhite;
+    color:$cBlack;
+    border: 2px solid $cBlack;
+    padding: 10px 40px;
+    margin: 50px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $cBlack;
+        color: $cWhite;
+    }
+
+    &.cover-3d {
+        position: relative;
+        overflow:  hidden;
+        z-index: 1;
+        transform-style: preserve-3d; //3dアニメーションのため　子要素beforeに適用
+        perspective: 300px; //3dアニメーションのため　３００から１０００px
+        perspective-origin: 50% 50%; //50% 50% default
+        //perspective: 100px;
+        //perspective-origin:  -100% 50%;  近くから. top leftとかも可
+
+        & span {
+            display: inline-block;//transformを使うためinline-blockに
+            transform: translateZ(20px); //inline要素には適用できない. 
+            //transform: translate3d(0, 0, 20px);
+        }
+
+        &::before {    //前の講義のspanを書き換え
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: $cBlack;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotateX(-90deg); //X軸の回りを回転
+            transition: all 0.3s;
+            transform-origin: top center;
+            // z-index: -1; 平面にきたときしか機能しないので、上のspanでtranslateZかtranslate3d
+            opacity: 0; //たたむ前の部分が上に見えるため。そして次のhoverでopacity解除
+        }
+
+        &:hover {
+            color: $cWhite;
+
+            &::before {   //前の講義のspanを書き換え
+                transform: none;
+                opacity: 1; //opacity解除
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+#container {
+    /*local stacking contextを生成する条件は、positionがstatic以外*/
+    padding: 1rem;
+    position: relative;
+    background: gray;
+}
+
+div {
+    font-weight:  600;
+    padding: 5rem;
+    font-size: 1.1em;
+    width: 150px;
+    height: 150px;
+    box-shadow: 7px 7px 0 0 black;
+}
+
+/*local stacking contextを生成する条件*/
+/*1:ルート要素 <html>*/
+/*2:positionがstatic以外, z-index:auto以外*/
+/*3:flex, gridの子要素,　z-index:auto以外*/
+/*4:opacityが１未満*/
+/*5:transform, filter, perspective, clip-path, mask, will-changeなど特定のプロパティに具体的な値を設定した場合*/
+
+.div-1 {
+    background-color: orange;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.div-2 {
+    background: tomato;
+    position: relative;
+    z-index: 30;
+}
+
+/*position:sticky*/
+/*要素は特定の範囲内でスクロールに応じて固定位置に留まるようになる*/
+/*top、right、bottom、leftのプロパティのうち少なくとも一つを指定する必要*/
+.div-3 {
+    background: teal;
+    position:absolute;
+    top: 40px;
+    left: 40px;
+    height: 800px;
+    z-index: 50;
+}
+
+.div-4 {
+    width: 80px;
+    height: 80px;
+    background-color: violet;
+    z-index: 100;
+    /*containerやdiv-3の親要素にoverflow:hiddenがつくと、stickyは動作しなくなる*/
+    position: sticky; /*親要素div-3のheightを指定することで追随するようになる*/
+    top: 30px;
+}
