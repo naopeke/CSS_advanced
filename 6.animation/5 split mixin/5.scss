@@ -1,0 +1,21 @@
+@use "child";
+@use "child copy";
+
+h1 {
+    color: child.$cBlue;
+}
+
+h2 {
+    color: child2.$cRed;
+}
+
+
+
+// @use "global" as g;
+// h1 {
+//     color: g.$cBlue;
+// }
+
+// h2 {
+//     color: g.$cRed;
+// }

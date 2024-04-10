@@ -1,0 +1,16 @@
+//@forwardで１つでまとめて転送
+
+@forward "child";
+@forward "child2";
+
+@use "child";
+@use "sass:math"; //割り算 DartSass
+
+body {
+    background-color: child.$cBlue;
+}
+
+h1 {
+    background: child.$cOrange;
+    font-size: math.div(30px, 2); //割り算 DartSass
+}

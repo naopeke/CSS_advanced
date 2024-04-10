@@ -1,0 +1,28 @@
+a {
+  color: orange;
+}
+a:visited {
+  color: blue;
+}
+a:hover {
+  color: red;
+}
+a:focus {
+  color: green;
+}
+a:active {
+  color: purple;
+}
+
+div span {
+  color: olive;
+}
+div span:not(.cls) {
+  color: yellow;
+}
+div span:nth-child(2n) {
+  color: bisque;
+}
+div span:nth-child(2n+1) {
+  color: pink;
+}/*# sourceMappingURL=6.css.map */

@@ -1,0 +1,44 @@
+@use "other-folder/mixin"; //folder名を書く。_もscssも不要
+// @use "other-folder/mixin" as mxn; //名前空間をつけられる 
+// @use "other-folder/mixin" as *; //名前空間を省略 
+
+
+$cBlack: black;
+
+body {
+  text-align: center;
+}
+
+
+.rect {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: $cBlack;
+  @include mixin.animation($name: sk-bouncedelay); // mixinを追加
+  // @include mxn.animation($name: sk-bouncedelay); // mxn名前空間
+  // @include animation($name: sk-bouncedelay); // 名前空間を省略
+
+
+  // animation: sk-bouncedelay 1.4s;
+  // animation-timing-function: ease;
+  // animation-delay: 3s;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate-reverse;
+  // animation-fill-mode: both;
+}
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes sk-bouncedelay {
+  from {
+    transform: scale(0);
+    background-color: black;
+  }
+
+  to {
+    transform: scale(1);
+    background-color: green;
+  }
+}

@@ -1,0 +1,65 @@
+//:visitedはリンクを押下後
+a {
+    color: orange;
+
+    &:visited {
+        color: blue;
+    }
+
+    &:hover {
+        color: red;
+    }
+
+    &:focus {
+        color: green;
+    }
+
+    &:active {
+        color: purple;
+    }
+}
+
+
+div{
+    & span {
+        color:olive;
+        
+        // &:nth-child(1){
+        //     color: purple;
+        // }
+
+        &:not(.cls){
+            color: yellow;
+        }
+
+        &:nth-child(2n){
+            color: bisque;
+        }
+
+        &:nth-child(2n + 1){  // :nth-child(odd)  :nth-child(even) :first-child
+            color: pink;
+        }
+    }
+}
+
+
+
+// div{
+//     & span {
+//         color:olive;
+    
+//         &:nth-of-type(1){
+//             color: purple;
+//         }
+
+//         &:nth-of-type(2){
+//             color: green;
+//         }
+
+//         &:nth-of-type(3){
+//             color: purple;
+//         }
+
+
+//     }
+// }
